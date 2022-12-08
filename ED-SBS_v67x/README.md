@@ -2,6 +2,8 @@
 
 Find below the instructions to compile and run ED-SBS model
 
+WARNING: A Earthdata account is required to download forcing files. Create it at: https://urs.earthdata.nasa.gov/users/new
+
 ## 1. Build executable
 Note: Message Passing Interface (MPI) needs to be installed to lauch parrallel computing.
 More informations can be fin at https://darwin3.readthedocs.io/en/latest/getting_started/getting_started.html#building-with-mpi
@@ -17,8 +19,17 @@ make depend
 make -j 16
 ```
 
-## 2. Prepare the simulation
-Note: You need to download the forcing files on ECCO data portal (see open reaserch statement)
+## 2. Download the forcing files
+Note: You need your WebDAV password accessible at: https://ecco.jpl.nasa.gov/drive
+```
+wget -r --no-parent --user=USERNAME --ask-password https://ecco.jpl.nasa.gov/drive/files/Version5/Alpha/era_xx
+wget -r --no-parent --user=USERNAME --ask-password https://ecco.jpl.nasa.gov/drive/files/ECCO2/LLC270/Mac_Delta/run_template
+wget -r --no-parent --user=USERNAME --ask-password
+wget -r --no-parent --user=USERNAME --ask-password
+```
+
+## 3. Prepare the simulation
+Note: You need to download the forcing files on ECCO data portal 
 
 ```
 cd ../run
@@ -43,7 +54,7 @@ ln -sf /../../Forcing/run_template/* .
 -- Copy setup files -- 
 cp ../../setup_files/input/* .
 ```
-## 3. Run the code
+## 4. Run the code
 
 ```
 mpirun -np 8 ./mitgsmuv &
