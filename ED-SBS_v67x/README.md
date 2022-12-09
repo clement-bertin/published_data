@@ -23,9 +23,8 @@ make -j 16
 Note: You need your WebDAV password accessible at: https://ecco.jpl.nasa.gov/drive
 ```
 wget -r --no-parent --user=USERNAME --ask-password https://ecco.jpl.nasa.gov/drive/files/Version5/Alpha/era_xx
-wget -r --no-parent --user=USERNAME --ask-password https://ecco.jpl.nasa.gov/drive/files/ECCO2/LLC270/Mac_Delta/run_template
-wget -r --no-parent --user=USERNAME --ask-password
-wget -r --no-parent --user=USERNAME --ask-password
+wget -r --no-parent --user=USERNAME --ask-password https://ecco.jpl.nasa.gov/drive/files/ECCO2/LLC270/Mac_Delta/run_template/32_Tracers_Nr44
+wget -r --no-parent --user=USERNAME --ask-password https://ecco.jpl.nasa.gov/drive/files/ECCO2/LLC270/Mac_Delta/river_runoff
 ```
 
 ## 3. Prepare the simulation
